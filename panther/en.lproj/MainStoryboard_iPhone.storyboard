@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2F5-2b-QKp">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37y-Nt-eve">
+                                <items>
+                                    <barButtonItem image="FindOnPagePreviousResult.png" width="47" style="plain" id="JC7-rx-lVZ">
+                                        <connections>
+                                            <action selector="goBack" destination="2F5-2b-QKp" id="9my-n5-WfD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="FindOnPageNextResult.png" width="33" style="plain" id="UML-kn-BfJ">
+                                        <connections>
+                                            <action selector="goForward" destination="2F5-2b-QKp" id="yn7-MW-cCl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Cvg-sX-59Y"/>
+                                    <barButtonItem title="Info" id="jl9-Ec-fnC">
+                                        <connections>
+                                            <segue destination="hQd-43-NNG" kind="modal" identifier="showInfo" id="rdm-eD-Bex"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="37y-Nt-eve" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Lze-cx-jsW"/>
+                            <constraint firstItem="37y-Nt-eve" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="QW8-Yp-7jl"/>
+                            <constraint firstItem="37y-Nt-eve" firstAttribute="top" secondItem="2F5-2b-QKp" secondAttribute="bottom" type="default" id="anP-1U-xyT"/>
+                            <constraint firstItem="2F5-2b-QKp" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="mSP-nD-SyK"/>
+                            <constraint firstItem="2F5-2b-QKp" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="q5z-Yv-pME"/>
+                            <constraint firstItem="37y-Nt-eve" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="vCg-qM-aVZ"/>
+                            <constraint firstItem="2F5-2b-QKp" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="yuP-RG-98H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="2F5-2b-QKp" id="csR-xM-5tq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="-32"/>
+        </scene>
+        <!--Info View Controller - Info-->
+        <scene sceneID="GUX-F4-H2g">
+            <objects>
+                <viewController id="bi7-DJ-Rhn" customClass="infoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5x-Bb-Ian">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Panther designed and developed by Samuel Lichlyter" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="279" translatesAutoresizingMaskIntoConstraints="NO" id="2sI-68-aXe">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="FMA-Ex-FcS"/>
+                                    <constraint firstAttribute="width" constant="279" type="user" id="coS-Kv-haz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Inspiration from Ms. Henry's 4th grade class at Brookville Elementary School in Brookville, Ohio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7nN-T1-8zX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help from Jim Teece, Paul Steele, and James Verespej from Project A in Ashland, Oregon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Ao5-oy-bYt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="J73-9K-uEe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2sI-68-aXe" firstAttribute="leading" secondItem="a5x-Bb-Ian" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="A7E-HG-24f"/>
+                            <constraint firstAttribute="trailing" secondItem="2sI-68-aXe" secondAttribute="trailing" constant="21" type="user" id="EjO-Fz-3i3"/>
+                            <constraint firstItem="Ao5-oy-bYt" firstAttribute="leading" secondItem="a5x-Bb-Ian" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Iir-8x-5HL"/>
+                            <constraint firstItem="7nN-T1-8zX" firstAttribute="top" secondItem="2sI-68-aXe" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Mi0-F8-Oow"/>
+                            <constraint firstAttribute="trailing" secondItem="Ao5-oy-bYt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NUz-rD-5kB"/>
+                            <constraint firstAttribute="trailing" secondItem="7nN-T1-8zX" secondAttribute="trailing" constant="20" type="user" id="QNP-KA-f65"/>
+                            <constraint firstItem="7nN-T1-8zX" firstAttribute="leading" secondItem="a5x-Bb-Ian" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="WcQ-jt-LhL"/>
+                            <constraint firstItem="2sI-68-aXe" firstAttribute="top" secondItem="a5x-Bb-Ian" secondAttribute="top" constant="35" id="jCd-hl-o6r"/>
+                            <constraint firstItem="Ao5-oy-bYt" firstAttribute="top" secondItem="7nN-T1-8zX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pNP-lg-W35"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" id="Woy-o1-6GP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="OCf-bU-R61">
+                            <connections>
+                                <segue destination="zen-br-yP9" kind="unwind" identifier="infoDone" unwindAction="done:" id="kW8-1O-Mlv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rY-Aw-VXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zen-br-yP9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1119" y="-32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zd1-h1-GqV">
+            <objects>
+                <navigationController id="hQd-43-NNG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8j4-XE-6Zo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bi7-DJ-Rhn" kind="relationship" relationship="rootViewController" id="FgV-ir-oJ6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNt-Vn-Ze4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FindOnPageNextResult.png" width="12" height="14"/>
+        <image name="FindOnPagePreviousResult.png" width="12" height="14"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="infoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/infoViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
